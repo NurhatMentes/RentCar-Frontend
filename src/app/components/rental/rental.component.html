@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-center">
+    <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<table *ngIf="dataLoaded==true" class="table table-striped">
+
+  <thead>
+    <tr>
+      <th scope="col">Marka</th>
+      <th scope="col">Müşteri/Şirket</th>
+      <th scope="col">İsim</th>
+      <th scope="col">Soyisim</th>
+      <th scope="col">Kiralandığı Tarih</th>
+      <th scope="col">Teslim Tarihi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rental of rentals">
+      <td>{{rental.brandName}}</td>
+      <td>{{rental.customerName}}</td>
+      <td>{{rental.firstName}}</td>
+      <td>{{rental.lastName}}</td>
+      <td>{{rental.rentDate}}</td>
+      <td>{{rental.returnDate}}</td>
+    </tr>
+    
+  </tbody>
+</table>
